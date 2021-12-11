@@ -8,7 +8,7 @@
       include_vars: vars/bastion_setup2
 
     - name: Import VPC setup Variable
-      include_vars: vars/output_vars
+      include_vars: vars/vpc_setup
 
     - name: Create vprofile ec2 key
       ec2_key:
