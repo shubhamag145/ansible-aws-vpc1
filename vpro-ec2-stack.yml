@@ -64,4 +64,4 @@
         purge_rules: no
         rules:
           - proto: all
-            group_id: "{{vproStack_out.group_id}}"
+            group_id: "{{vproStackSG_out.group_id}}"
