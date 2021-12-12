@@ -36,6 +36,13 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
 
+    - set_fact:
+        BastionSGid: "{{BastionSG_out.group_id}}"
+    - name:
+      copy:
+        content: "BastionSGid: {{BastionSG_out.group_id}}"
+        dest: vars/vpc-output_vars
+
     - name: Creating bastion host
       ec2:
         key_name: vprofile-key
@@ -56,3 +63,4 @@
         group_id: "{{BastionSG_out.group_id}}"
         vpc_subnet_id: "{{pubsub1id}}"
       register: bastionHost_out
+
