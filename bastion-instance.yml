@@ -46,7 +46,7 @@
         wait_timeout: 300
         instance_tags:
           Name: "Bastion_host"
-          Project: Orange
+          Project: Vprofile
           Owner: DevOps_Team
         exact_count: 1
         count_tag:
