@@ -36,12 +36,11 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
 
-    - set_fact:
-        BastionSGid: "{{BastionSG_out.group_id}}"
-    - name:
-      copy:
-        content: "BastionSGid: {{BastionSG_out.group_id}}"
-        dest: vars/vpc-output_vars
+    - name: Insert/Update "BastionSgid" in vars/vpc-output_vars
+      blockinfile:
+        path: vars/vpc-output_vars
+        block: |
+          BastionSGid: {{BastionSG_out.group_id}}
 
     - name: Creating bastion host
       ec2:
