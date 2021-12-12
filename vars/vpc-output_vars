@@ -10,4 +10,5 @@ pubRTid: rtb-03abf70282c83b599
 NATGWid: nat-08ebcfb16158dfd5b
 privRTid: rtb-0e10b382273faaff6
 
-region: "us-east-1"
+#Region name
+region: us-east-1
